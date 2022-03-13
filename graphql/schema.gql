@@ -1,0 +1,38 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Post {
+  """id of the post"""
+  postId: String!
+
+  """Title of the post"""
+  title: String!
+
+  """Description of the post"""
+  description: String!
+}
+
+type PostDto {
+  _id: ID!
+  title: String!
+  description: String!
+}
+
+type Query {
+  posts: [Post!]!
+  post(postId: String!): Post!
+  getPost(input: CreatePostInput!): PostDto!
+}
+
+input CreatePostInput {
+  """Title of the post"""
+  title: String!
+
+  """Description of the post"""
+  description: String!
+}
+
+type Mutation {
+  createPost(input: CreatePostInput!): Post!
+}
